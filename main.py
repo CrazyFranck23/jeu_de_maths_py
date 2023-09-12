@@ -8,9 +8,19 @@ NB_QUESTIONS = 4
 def poser_qeustion():
     a = random.randint(NOMBRE_MIN, NOMBRE_MAX)
     b = random.randint(NOMBRE_MIN, NOMBRE_MAX)
-    reponse_str = input(f"Calculez {a} + {b} = ")
+    o = random.randint(0,1)   # Let 0 -> + and 1 -> *
+
+    operateur_str = "+"
+    if o == 1:
+        operateur_str = "*"
+    reponse_str = input(f"Calculez {a} {operateur_str} {b} = ")
     reponse_int = int(reponse_str)
-    if reponse_int == a+b:
+
+    calcul = a + b
+    if o == 1:
+        calcul = a * b
+
+    if reponse_int == calcul:
         return True
     else:
         return False
