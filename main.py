@@ -13,17 +13,24 @@ def poser_qeustion():
     operateur_str = "+"
     if o == 1:
         operateur_str = "*"
-    reponse_str = input(f"Calculez {a} {operateur_str} {b} = ")
-    reponse_int = int(reponse_str)
 
-    calcul = a + b
-    if o == 1:
-        calcul = a * b
+    reponse_int = 0
+    while reponse_int == 0:
+        reponse_str = input(f"Calculez {a} {operateur_str} {b} = ")
 
-    if reponse_int == calcul:
-        return True
-    else:
-        return False
+        try:
+            reponse_int = int(reponse_str)
+        except:
+            print("ERREUR: Entrer uniquement des nombres comme réponse.")
+        else:
+            calcul = a + b
+            if o == 1:
+                calcul = a * b
+
+            if reponse_int == calcul:
+                return True
+            else:
+                return False
 
 
 nb_points = 0
