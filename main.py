@@ -20,8 +20,9 @@ def poser_qeustion():
 
         try:
             reponse_int = int(reponse_str)
-        except:
+        except ValueError:
             print("ERREUR: Entrer uniquement des nombres comme réponse.")
+            print()
         else:
             calcul = a + b
             if o == 1:
