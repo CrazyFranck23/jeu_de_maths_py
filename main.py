@@ -11,12 +11,20 @@ def poser_qeustion():
     reponse_str = input(f"Calculez {a} + {b} = ")
     reponse_int = int(reponse_str)
     if reponse_int == a+b:
-        print("Réponse correcte")
+        return True
     else:
-        print("Réponse incorrecte")
+        return False
 
 
+nb_points = 0
 for i in range(0, NB_QUESTIONS):
     print(f"Question n°{i+1} sur {NB_QUESTIONS}")
-    poser_qeustion()
+    if poser_qeustion():
+        print("Réponse correcte")
+        nb_points += 1
+    else:
+        print("Réponse incorrecte")
     print()
+
+print(f"Votre note est : {nb_points}/{NB_QUESTIONS}")
+
